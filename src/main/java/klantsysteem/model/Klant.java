@@ -98,8 +98,16 @@ public class Klant {
         mijnBehandelingen.add(behandeling);
     }
 
+    public ArrayList getBehandelingen(){
+        return mijnBehandelingen;
+    }
+
     public void addFamilieLid(FamilieLidVanKlant fam){
         familieVan.add(fam);
+    }
+
+    public ArrayList getFamilieVan(){
+        return familieVan;
     }
 
     @Override
@@ -134,5 +142,8 @@ public class Klant {
             totaalkosten += product.getProductPrijs();
         }
         return totaalkosten;
+    }
+    public ArrayList getGekochteProducten(){
+        return gekochteProducten;
     }
 }
