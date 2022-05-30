@@ -1,11 +1,14 @@
 package klantsysteem.model;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 public class Product {
     private String productNaam;
     private double productPrijs;
     private int aantalBesschikbaar;
+    private LocalDate aanschafDatum;
 
     public Product(String productNaam, double productPrijs) {
         this.productNaam = productNaam;
@@ -34,6 +37,15 @@ public class Product {
 
     public void setAantalBesschikbaar(int aantalBesschikbaar) {
         this.aantalBesschikbaar = aantalBesschikbaar;
+    }
+
+    public void setAanschafDatum(LocalDate aanschafDatum){this.aanschafDatum = aanschafDatum; }
+
+    public LocalDate getAanschafDatum() { return aanschafDatum; }
+
+    @Override
+    public String toString() {
+        return productNaam + " voor €" + productPrijs + ".- op datum" + aanschafDatum;
     }
 
     @Override
