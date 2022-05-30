@@ -81,6 +81,14 @@ public class Klant {
         huidkenmerken.add(kenmerk);
     }
 
+    public void removeHuidkenmerk(String kenmerk) {
+        for (String huidkenmerk : huidkenmerken){
+            if (huidkenmerk.equals(kenmerk)){
+                huidkenmerken.remove(huidkenmerk);
+            }
+        }
+    }
+
     public void koop(Product product, LocalDate aanschafDatum){
         product.setAanschafDatum(aanschafDatum);
         gekochteProducten.add(product);
