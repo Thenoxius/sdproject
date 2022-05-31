@@ -97,6 +97,7 @@ public class Klant {
                 aangekocht.verhoogAantalgekocht(aantalStuks);
             }
         }
+        product.setAantalBesschikbaar((product.getAantalBesschikbaar()-aantalStuks));
 
     }
 
