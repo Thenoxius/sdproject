@@ -5,84 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class KlantTest {
-
     @Test
-    void getNaam() {
+    public void koop_verlaagd_aantal_besschikbaar() {
     }
 
     @Test
-    void setNaam() {
+    public void koop_registreerd_aankoopdatum() {
+
     }
 
-    @Test
-    void getGeboorteDatum() {
-    }
-
-    @Test
-    void setGeboorteDatum() {
-    }
-
-    @Test
-    void getTelefoonNummer() {
-    }
-
-    @Test
-    void setTelefoonNummer() {
-    }
-
-    @Test
-    void getStraat() {
-    }
-
-    @Test
-    void setStraat() {
-    }
-
-    @Test
-    void getWoonPlaats() {
-    }
-
-    @Test
-    void setWoonPlaats() {
-    }
-
-    @Test
-    void getPostcode() {
-    }
-
-    @Test
-    void setPostcode() {
-    }
-
-    @Test
-    void getHuidkenmerken() {
-    }
-
-    @Test
-    void addHuidkenmerken() {
-    }
-
-    @Test
-    void removeHuidkenmerk() {
-    }
-
-    @Test
-    void koop() {
-    }
-
-    @Test
-    void addBehandeling() {
-    }
-
-    @Test
-    void addFamilieLid() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void maakRekening() {
-    }
 }

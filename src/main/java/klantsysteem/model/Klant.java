@@ -7,16 +7,16 @@ import java.util.Date;
 public class Klant {
     private String naam;
     private LocalDate geboorteDatum;
-    private int telefoonNummer;
+    private String telefoonNummer;
     private String straat;
     private String woonPlaats;
     private String postcode;
-    private ArrayList<String> huidkenmerken;
-    private ArrayList<Product> gekochteProducten;
-    private ArrayList<Behandeling> mijnBehandelingen;
-    private ArrayList<FamilieLidVanKlant> familieVan;
+    private ArrayList<String> huidkenmerken = new ArrayList<>();;
+    private ArrayList<Product> gekochteProducten = new ArrayList<>();;
+    private ArrayList<Behandeling> mijnBehandelingen = new ArrayList<>();;
+    private ArrayList<FamilieLidVanKlant> familieVan = new ArrayList<>();;
 
-    public Klant(String naam, LocalDate geboorteDatum, int telefoonNummer, String straat, String woonPlaats, String postcode) {
+    public Klant(String naam, LocalDate geboorteDatum, String telefoonNummer, String straat, String woonPlaats, String postcode) {
         this.naam = naam;
         this.geboorteDatum = geboorteDatum;
         this.telefoonNummer = telefoonNummer;
@@ -41,11 +41,11 @@ public class Klant {
         this.geboorteDatum = geboorteDatum;
     }
 
-    public int getTelefoonNummer() {
+    public String getTelefoonNummer() {
         return telefoonNummer;
     }
 
-    public void setTelefoonNummer(int telefoonNummer) {
+    public void setTelefoonNummer(String telefoonNummer) {
         this.telefoonNummer = telefoonNummer;
     }
 
@@ -89,9 +89,15 @@ public class Klant {
         }
     }
 
-    public void koop(Product product, LocalDate aanschafDatum){
-        product.setAanschafDatum(aanschafDatum);
+    public void koop(Product product, LocalDate aanschafDatum, int aantalStuks){
         gekochteProducten.add(product);
+        for (Product aangekocht : gekochteProducten){
+            if (aangekocht.equals(product)){
+                aangekocht.setAanschafDatum(aanschafDatum);
+                aangekocht.verhoogAantalgekocht(aantalStuks);
+            }
+        }
+
     }
 
     public void addBehandeling(Behandeling behandeling){
@@ -139,7 +145,7 @@ public class Klant {
             }
         }
         for (Product product : eindafrekeningproducten){
-            totaalkosten += product.getProductPrijs();
+            totaalkosten += (product.getProductPrijs() * product.getAantalGekocht());
         }
         return totaalkosten;
     }

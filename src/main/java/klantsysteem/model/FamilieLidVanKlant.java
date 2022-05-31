@@ -4,10 +4,11 @@ public class FamilieLidVanKlant {
     private String naam;
     private int leeftijd;
     private String titel;
-    public FamilieLidVanKlant(String naam, int leeftijd, String titel) {
+    public FamilieLidVanKlant(String naam, int leeftijd, String titel, Klant klant) {
         this.naam = naam;
         this.leeftijd = leeftijd;
         this.titel = titel;
+        assignToKlant(klant);
     }
     public String getNaam() {
         return naam;

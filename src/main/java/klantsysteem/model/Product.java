@@ -9,6 +9,7 @@ public class Product {
     private double productPrijs;
     private int aantalBesschikbaar;
     private LocalDate aanschafDatum;
+    private int aantalGekocht;
 
     public Product(String productNaam, double productPrijs) {
         this.productNaam = productNaam;
@@ -42,6 +43,12 @@ public class Product {
     public void setAanschafDatum(LocalDate aanschafDatum){this.aanschafDatum = aanschafDatum; }
 
     public LocalDate getAanschafDatum() { return aanschafDatum; }
+
+    public void verhoogAantalgekocht(int verhoging){
+        aantalGekocht += verhoging;
+    }
+
+    public int getAantalGekocht() {return aantalGekocht;}
 
     @Override
     public String toString() {
